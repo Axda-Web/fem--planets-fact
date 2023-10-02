@@ -1,0 +1,58 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Overview {
+  id      String   @id @default(auto()) @map("_id") @db.ObjectId
+  content String
+  source  String
+  Planet  Planet[]
+}
+
+model Structure {
+  id      String   @id @default(auto()) @map("_id") @db.ObjectId
+  content String
+  source  String
+  Planet  Planet[]
+}
+
+model Geology {
+  id      String   @id @default(auto()) @map("_id") @db.ObjectId
+  content String
+  source  String
+  Planet  Planet[]
+}
+
+model Images {
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  planet   String
+  internal String
+  geology  String
+  Planet   Planet[]
+}
+
+model Planet {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  name        String    @unique
+  overview    Overview  @relation(fields: [overviewId], references: [id])
+  structure   Structure @relation(fields: [structureId], references: [id])
+  geology     Geology   @relation(fields: [geologyId], references: [id])
+  rotation    String
+  revolution  String
+  radius      String
+  temperature String
+  images      Images    @relation(fields: [imagesId], references: [id])
+  overviewId  String    @db.ObjectId
+  structureId String    @db.ObjectId
+  geologyId   String    @db.ObjectId
+  imagesId    String    @db.ObjectId
+}
