@@ -26,4 +26,6 @@ const getPlanetById = async (id: string) => {
   }
 };
 
-export { getPlanets };
+export { getPlanets, getPlanetById };
+
+// TODO: Add Zod validation
