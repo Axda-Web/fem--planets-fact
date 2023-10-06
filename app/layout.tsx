@@ -1,8 +1,9 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter, Antonio, League_Spartan } from "next/font/google";
+import { Antonio, League_Spartan } from "next/font/google";
+import Image from "next/image";
 
-const inter = Inter({ subsets: ["latin"] });
+import Header from "./components/Header";
 
 const antonio = Antonio({
   subsets: ["latin"],
@@ -30,7 +31,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${spartan.variable} ${antonio.variable}`}>
-      <body className={inter.className}>{children}</body>
+      <body>
+        <Header />
+        <div className="md:max-w-[424px] lg:max-w-[648px] xl:max-w-[872px] mx-auto py-12">
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
