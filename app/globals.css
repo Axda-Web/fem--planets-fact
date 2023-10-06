@@ -2,7 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background: url("/assets/images/background-stars.svg"), #070724;
+}
+
 @layer base {
+  .logo {
+    font-family: var(--font-antonio);
+    font-size: 28px;
+    letter-spacing: -1.05px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
   .heading1 {
     font-family: var(--font-antonio);
     font-size: 80px;
@@ -71,7 +83,7 @@
     @apply active:bg-jupiter;
   }
 
-  btn-.active-saturne {
+  .btn-active-saturne {
     @apply active:bg-saturne;
   }
 
