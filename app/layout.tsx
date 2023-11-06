@@ -1,7 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Antonio, League_Spartan } from "next/font/google";
-import Image from "next/image";
 
 import Header from "./components/Header";
 
@@ -33,9 +32,7 @@ export default function RootLayout({
     <html lang="en" className={`${spartan.variable} ${antonio.variable}`}>
       <body>
         <Header />
-        <div className="md:max-w-[424px] lg:max-w-[648px] xl:max-w-[872px] mx-auto py-12">
-          {children}
-        </div>
+        <div>{children}</div>
       </body>
     </html>
   );
