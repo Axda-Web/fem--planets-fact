@@ -24,7 +24,9 @@ const Header = () => {
           <Link href="/">The planets</Link>
         </div>
         <button
-          className="sm:hidden"
+          className={clsx("sm:hidden", {
+            "opacity-20": showMobileMenu,
+          })}
           onClick={() => setShowMobileMenu(!showMobileMenu)}
         >
           <Image
@@ -77,6 +79,71 @@ const Header = () => {
                     href={link.route}
                   >
                     {link.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      </div>
+      <div
+        className={clsx(
+          "absolute overflow-hidden bottom-0 top-[75px] bg-dark z-10 transition-all duration-500",
+          {
+            "w-0": !showMobileMenu,
+            "w-full": showMobileMenu,
+          },
+          "sm:hidden"
+        )}
+      >
+        <nav className="p-6">
+          <ul className="flex flex-col justify-between gap-x-8">
+            {NAV_LINKS.map((link, index) => {
+              const isActivePage = pathname === link.route;
+
+              const activeColorClasses: Record<string, string> = {
+                mercury: "bg-mercury",
+                venus: "bg-venus",
+                earth: "bg-earth",
+                mars: "bg-mars",
+                jupiter: "bg-jupiter",
+                saturn: "bg-jupiter",
+                uranus: "bg-uranus",
+                neptune: "bg-neptune",
+              };
+
+              return (
+                <li
+                  key={index}
+                  className={clsx("border-b border-light/10", "last:border-0")}
+                >
+                  <Link
+                    onClick={() => setShowMobileMenu(false)}
+                    className={clsx(
+                      "flex justify-between items-center text-[15px] py-5 uppercase font-bold font-paragraph leading-[25px] tracking-[1.364px]",
+                      {
+                        "text-light": isActivePage,
+                        "text-light/50": !isActivePage,
+                      }
+                    )}
+                    href={link.route}
+                  >
+                    <div className="flex gap-x-[25px] items-center">
+                      <div
+                        className={clsx(
+                          "w-5 h-5 rounded-full",
+                          activeColorClasses[link.label]
+                        )}
+                      ></div>
+                      {link.label}
+                    </div>
+                    <Image
+                      className="w-[6px] h-[8px]"
+                      src="/assets/icons/icon-chevron.svg"
+                      alt="menu"
+                      width={6}
+                      height={8}
+                    />
                   </Link>
                 </li>
               );
