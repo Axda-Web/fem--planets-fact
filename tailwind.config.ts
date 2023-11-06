@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        title: ["var(--font-antonio)"],
+        paragraph: ["var(--font-spartan)"],
+      },
       colors: {
         light: "#fff",
         dark: "#070724",
