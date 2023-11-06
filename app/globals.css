@@ -21,6 +21,7 @@ body {
     font-weight: 500;
     line-height: 1.2875;
     text-transform: uppercase;
+    color: #fff;
   }
 
   .heading2 {
@@ -55,43 +56,6 @@ body {
     font-size: 14px;
     font-weight: 400;
     line-height: 1.785714;
-  }
-}
-
-@layer components {
-  .btn {
-    @apply heading3 py-3 px-7 border border-light hover:bg-carbonBlue;
-  }
-
-  .btn-active-mercure {
-    @apply active:bg-mercure;
-  }
-
-  .btn-active-venus {
-    @apply active:bg-venus;
-  }
-
-  .btn-active-earth {
-    @apply active:bg-earth;
-  }
-
-  .btn-active-mars {
-    @apply active:bg-mars;
-  }
-
-  .btn-active-jupiter {
-    @apply active:bg-jupiter;
-  }
-
-  .btn-active-saturne {
-    @apply active:bg-saturne;
-  }
-
-  .btn-active-uranus {
-    @apply active:bg-uranus;
-  }
-
-  .btn-active-neptune {
-    @apply active:bg-neptune;
+    color: #fff;
   }
 }
