@@ -50,11 +50,11 @@ const getPlanets = async () => {
   }
 };
 
-const getPlanetById = async (id: string) => {
+const getPlanetByName = async (name: string) => {
   try {
     const rawData = await prisma.planet.findUnique({
       where: {
-        id: id,
+        name: name,
       },
       select: {
         id: true,
@@ -101,4 +101,4 @@ const getPlanetById = async (id: string) => {
   }
 };
 
-export { getPlanets, getPlanetById };
+export { getPlanets, getPlanetByName };
