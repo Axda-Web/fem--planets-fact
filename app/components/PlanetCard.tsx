@@ -10,7 +10,7 @@ const PlanetCard = ({ planet }: PlanetCardProps) => {
   return (
     <article
       className={clsx(
-        "border border-light/50 w-full max-w-[200px] transition-all group",
+        "border border-light/20 w-full max-w-[200px] transition-all group",
         "hover:border-light hover:translate-y-3"
       )}
     >

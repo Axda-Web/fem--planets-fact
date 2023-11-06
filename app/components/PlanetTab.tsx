@@ -53,7 +53,7 @@ const PlanetTab = ({
         "font-paragraph font-bold text-light uppercase text-[9px] tracking-[1.929px] transition-colors",
         "md:py-3 md:px-7 md:border md:hover:border-carbonBlue md:hover:bg-carbonBlue md:text-xs md:w-full md:flex md:gap-x-6",
         {
-          "md:border-light": !isActive,
+          "md:border-light/20": !isActive,
           [computedClasses[planet]]: isActive,
         }
       )}
