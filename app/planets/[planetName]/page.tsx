@@ -46,8 +46,8 @@ async function PlanetPage({ params }: Props) {
   return (
     <main
       className={clsx(
-        "md:px-10 md:max-w-[768px] mx-auto",
-        "xl:max-w-[1110px] xl:pt-32"
+        "md:px-10 md:max-w-[768px] mx-auto pb-12",
+        "xl:max-w-[1110px] xl:pt-32 xl:pb-0"
       )}
     >
       <PlanetInfoSection planet={planet!} />
