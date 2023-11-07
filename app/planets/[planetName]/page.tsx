@@ -17,7 +17,8 @@ export async function generateMetadata({ params }: Props) {
 
 export async function generateStaticParams() {
   const planets = await getPlanets();
-  return planets?.map((planet) => ({
+  if (!planets) return [];
+  return planets.map((planet) => ({
     planetName: planet.name,
   }));
 }
